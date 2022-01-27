@@ -1,8 +1,8 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerControllerEK : MonoBehaviour
+public class PlayerWalkEK : MonoBehaviour
 {
     public Rigidbody myRigidbody;
     public float moveSpeed = 5f;
@@ -16,7 +16,5 @@ public class PlayerControllerEK : MonoBehaviour
         //Set move velocity
         //Preferably interact with physics in FixedUpdate() 
         myRigidbody.velocity = new Vector3(moveInput * moveSpeed, myRigidbody.velocity.y, 0);
-
-     
     }
 }
