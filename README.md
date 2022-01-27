@@ -1,2 +1,1 @@
-# GP21 Game Engine and Scripting Engine
- Game Project
+# gp21-game-engine-and-scripting-course
