@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class PlayerInputController : MonoBehaviour
+namespace EmanoelK.Scripts
 {
-    public float MoveInput { get; private set; }
-    public bool JumpInputDown { get; private set; }
-    public bool JumpInputUp { get; private set; }
-    public bool JumpInput { get; private set; }
-
-    private void Update()
+    public class PlayerInputController : MonoBehaviour
     {
-        MoveInput = Input.GetAxis("Horizontal");
-        JumpInputDown = Input.GetKeyDown(KeyCode.Space);
-        JumpInputUp = Input.GetKeyUp(KeyCode.Space);
-        JumpInput = Input.GetKey(KeyCode.Space);
+        public float MoveInput { get; private set; }
+        public bool JumpInputDown { get; private set; }
+        public bool JumpInputUp { get; private set; }
+        public bool JumpInput { get; private set; }
+
+        private void Update()
+        {
+            MoveInput = Input.GetAxis("Horizontal");
+            JumpInputDown = Input.GetKeyDown(KeyCode.Space);
+            JumpInputUp = Input.GetKeyUp(KeyCode.Space);
+            JumpInput = Input.GetKey(KeyCode.Space);
+        }
     }
 }

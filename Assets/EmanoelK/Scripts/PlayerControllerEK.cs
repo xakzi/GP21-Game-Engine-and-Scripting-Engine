@@ -1,22 +1,23 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-public class PlayerControllerEK : MonoBehaviour
+namespace EmanoelK.Scripts
 {
-    public Rigidbody myRigidbody;
-    public float moveSpeed = 5f;
-
-    private void Update()
+    public class PlayerControllerEK : MonoBehaviour
     {
-        //Get move input
-        //Preferably get input in Update()
-        var moveInput = Input.GetAxis("Horizontal");
+        public Rigidbody myRigidbody;
+        public float moveSpeed = 5f;
 
-        //Set move velocity
-        //Preferably interact with physics in FixedUpdate() 
-        myRigidbody.velocity = new Vector3(moveInput * moveSpeed, myRigidbody.velocity.y, 0);
+        private void Update()
+        {
+            //Get move input
+            //Preferably get input in Update()
+            var moveInput = Input.GetAxis("Horizontal");
+
+            //Set move velocity
+            //Preferably interact with physics in FixedUpdate() 
+            myRigidbody.velocity = new Vector3(moveInput * moveSpeed, myRigidbody.velocity.y, 0);
 
      
+        }
     }
 }

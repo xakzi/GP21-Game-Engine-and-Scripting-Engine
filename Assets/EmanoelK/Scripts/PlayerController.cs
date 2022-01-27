@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace EmanoelK.Scripts
 {
-    public Rigidbody myRigidbody;
-    public float moveSpeed = 5f;
-    public float jumpForce = 500f;
-
-    private void Update()
+    public class PlayerController : MonoBehaviour
     {
-        //Get move input
-        //Preferably get input in Update()
-        var moveInput = Input.GetAxis("Horizontal");
+        public Rigidbody myRigidbody;
+        public float moveSpeed = 5f;
+        public float jumpForce = 500f;
 
-        //Set move velocity
-        //Preferably interact with physics in FixedUpdate() 
-        myRigidbody.velocity = new Vector3(moveInput * moveSpeed, myRigidbody.velocity.y, 0);
+        private void Update()
+        {
+            //Get move input
+            //Preferably get input in Update()
+            var moveInput = Input.GetAxis("Horizontal");
 
-        //Get jump input
-        //Preferably get input in Update()
-        var jumpInput = Input.GetKeyDown(KeyCode.Space);
+            //Set move velocity
+            //Preferably interact with physics in FixedUpdate() 
+            myRigidbody.velocity = new Vector3(moveInput * moveSpeed, myRigidbody.velocity.y, 0);
 
-        //Apply jump force
-        //Preferably interact with physics in FixedUpdate() 
-        if (jumpInput)
-            myRigidbody.AddForce(Vector3.up * jumpForce);
+            //Get jump input
+            //Preferably get input in Update()
+            var jumpInput = Input.GetKeyDown(KeyCode.Space);
+
+            //Apply jump force
+            //Preferably interact with physics in FixedUpdate() 
+            if (jumpInput)
+                myRigidbody.AddForce(Vector3.up * jumpForce);
+        }
     }
 }
